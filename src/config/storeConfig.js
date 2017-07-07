@@ -1,9 +1,18 @@
 import {
     AsyncStorage,
 } from 'react-native';
-import { applyMiddleware, createStore, compose } from 'redux';
-import { persistStore, autoRehydrate } from 'redux-persist';
-import { createLogger } from 'redux-logger';
+import {
+    applyMiddleware,
+    createStore,
+    compose
+} from 'redux';
+import {
+    persistStore,
+    autoRehydrate
+} from 'redux-persist';
+import {
+    createLogger
+} from 'redux-logger';
 import thunk from 'redux-thunk';
 import rootReducer from '../reducers';
 
@@ -12,7 +21,7 @@ const logger = createLogger();
 
 // console.log('process.env.NODE_ENV', process.env.NODE_ENV);
 process.env.NODE_ENV === 'production'
-    ? middlewareApplied = applyMiddleware(thunk, /*logger*/)
+    ? middlewareApplied = applyMiddleware(thunk)
     : middlewareApplied = applyMiddleware(thunk, logger);
 
 
@@ -24,9 +33,7 @@ const store = createStore(rootReducer, {},
     ));
 persistStore(store, {
     storage: AsyncStorage,
-    //debounce: 50,
-    whitelist: ['autoRehydrated'],
-    //blacklist: [ 'navigationState' ],
+    whitelist: ['autoRehydrated']
 }, () => {
 
 }).purge([]);

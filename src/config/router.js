@@ -1,8 +1,6 @@
 import React from 'react';
 import {
-    TabNavigator,
-    StackNavigator,
-    DrawerNavigator
+    StackNavigator
 } from 'react-navigation';
 
 import ProductDetail from '../containers/ProductDetailContainer';
