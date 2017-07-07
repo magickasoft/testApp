@@ -7,8 +7,11 @@
     "test": "jest"
   },
   "dependencies": {
+    "data.either": "^1.5.1",
+    "data.maybe": "^1.2.2",
     "lodash": "^4.17.4",
     "moment": "^2.18.1",
+    "normalizr": "^3.2.3",
     "query-string": "^4.3.4",
     "react": "16.0.0-alpha.6",
     "react-native": "0.44.0",
@@ -31,6 +34,7 @@
     "react-navigation": "^1.0.0-beta.9",
     "react-redux": "^5.0.4",
     "redux": "^3.6.0",
+    "redux-batched-actions": "^0.2.0",
     "redux-logger": "^3.0.1",
     "redux-persist": "^4.8.0",
     "redux-thunk": "^2.2.0"
