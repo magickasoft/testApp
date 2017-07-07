@@ -1,11 +1,12 @@
 import {
-    NETINFO_SET_STATUS,
-} from '../constants/ActionTypes'
+    curry
+} from 'lodash/fp';
 
+export const SET_STATUS = 'UI/NETINFO/SET_STATUS';
 
-export function setNetInfoStatus(data) {
-    return {
-        type: NETINFO_SET_STATUS,
+export const setNetInfoStatus = curry(
+    data => ({
+        type: SET_STATUS,
         payload: data
-    }
-}
+    })
+);

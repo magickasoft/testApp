@@ -88,7 +88,7 @@ export default class Example extends React.Component {
             // console.error('this.camera.capture.error',err)
         });
     }
-  }
+  };
 
   startRecording = () => {
     if (this.camera) {
@@ -103,7 +103,7 @@ export default class Example extends React.Component {
         isRecording: true
       });
     }
-  }
+  };
 
   stopRecording = () => {
     if (this.camera) {
@@ -112,7 +112,7 @@ export default class Example extends React.Component {
         isRecording: false
       });
     }
-  }
+  };
 
   switchType = () => {
     let newType;
@@ -130,7 +130,7 @@ export default class Example extends React.Component {
         type: newType,
       },
     });
-  }
+  };
 
   get typeIcon() {
     let icon;
@@ -163,7 +163,7 @@ export default class Example extends React.Component {
         flashMode: newFlashMode,
       },
     });
-  }
+  };
 
   get flashIcon() {
     let icon;

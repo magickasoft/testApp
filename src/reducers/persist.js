@@ -1,5 +1,5 @@
 
-export function autoRehydrated(state = false, action = {}) {
+export function reducer(state = false, action = {}) {
   const { type, payload } = action;
 
   switch(type) {

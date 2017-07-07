@@ -1,17 +1,12 @@
-'use strict';
 import { combineReducers } from 'redux'
-import { autoRehydrated } from './persist'
-import { netinfo } from './netinfo'
-import { photopiker } from './photoPicker'
-import { settings } from './settings'
-// import { nav } from './nav'
+import { reducer as reducerAutoRehydrated } from './persist'
+import { reducer as reducerNetinfo } from './netinfo'
+// import { reducer as reducerNav } from './nav'
 
 const rootReducer = combineReducers({
-    autoRehydrated,
-    netinfo,
-    settings,
-    photopiker,
-    //nav,
+    autoRehydrated: reducerAutoRehydrated,
+    netInfo: reducerNetinfo,
+    //nav: reducerNav,
 });
 
 export default rootReducer;

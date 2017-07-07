@@ -1,17 +1,21 @@
 import {
-    NETINFO_SET_STATUS,
-} from '../constants/ActionTypes'
+    Nothing,
+    Just
+} from 'data.maybe';
+import {
+    SET_STATUS
+} from 'actions/netinfo';
 
-const initialState = {
-    type: ''
+export const initialState = {
+    type: Nothing()
 };
 
-export function netinfo(state = initialState, action = {}) {
+export function reducer(state = initialState, action = {}) {
     const { type, payload } = action;
 
     switch (type) {
-        case NETINFO_SET_STATUS: {
-            return {...state, type: payload};
+        case SET_STATUS: {
+            return {...state, type: Just(payload)};
         }
     }
     return state

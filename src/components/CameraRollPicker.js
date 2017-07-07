@@ -26,7 +26,7 @@ class CameraRollPickers extends Component {
           <CameraRollPicker
               maximum={1}
               callback={(images) => {
-                  images[0] && this.props.getPhoto(Object.assign({ uid }, images[0])) || this.props.clearPhoto(uid)
+                  // images[0] && this.props.getPhoto(Object.assign({ uid }, images[0])) || this.props.clearPhoto(uid)
               }
               } />
     );

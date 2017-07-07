@@ -7,8 +7,6 @@ import { createLogger } from 'redux-logger';
 import thunk from 'redux-thunk';
 import rootReducer from '../reducers';
 
-import * as photoActions from '../actions/photoPicker'
-
 let middlewareApplied;
 const logger = createLogger();
 
@@ -27,10 +25,10 @@ const store = createStore(rootReducer, {},
 persistStore(store, {
     storage: AsyncStorage,
     //debounce: 50,
-    whitelist: ['autoRehydrated', 'photopiker', 'settings'],
+    whitelist: ['autoRehydrated'],
     //blacklist: [ 'navigationState' ],
 }, () => {
-    !store.getState().settings.saveImagesOnDevice && store.dispatch(photoActions.clearPhotos())
+
 }).purge([]);
 
 export default store;

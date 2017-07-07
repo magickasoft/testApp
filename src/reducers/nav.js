@@ -15,7 +15,7 @@ const initialState = {
     ],
 };
 
-export function nav(state = initialState, action) {
+export function reducer(state = initialState, action) {
 
     //const newState = Root.router.getStateForAction(action, state);
     //return newState || state;
