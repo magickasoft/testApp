@@ -6,6 +6,8 @@ export const users = [
             "first": "Alexis",
             "last": "Touloupis"
         },
+        "productName" : "Veon 42 inch LED-LCD Full HD TV SRO422016",
+        "productPrice" : "$ 379.00",
         "subTitle" : "Zahntechnikmeister (ZTM) · Labor Geretsried",
         "person_image": 'https://randomuser.me/api/portraits/men/2.jpg',
         "location": {
@@ -27,6 +29,8 @@ export const users = [
             "first": "Christian",
             "last": "Straßburger"
         },
+        "productName" : "Veon 42 inch LED-LCD Full HD TV SRO422016",
+        "productPrice" : "$ 379.00",
         "subTitle" : "Zahntechniker (ZT) · Labor Geretsried",
         "person_image": 'https://randomuser.me/api/portraits/men/2.jpg',
         "location": {
@@ -48,6 +52,8 @@ export const users = [
             "first": "Claudia",
             "last": "Sparrer"
         },
+        "productName" : "Veon 42 inch LED-LCD Full HD TV SRO422016",
+        "productPrice" : "$ 379.00",
         "subTitle" : "Zahntechniker (ZT) · Labor München",
         "person_image": 'https://randomuser.me/api/portraits/men/2.jpg',
         "location": {
@@ -69,6 +75,8 @@ export const users = [
             "first": "Anne",
             "last": "Winter"
         },
+        "productName" : "Veon 42 inch LED-LCD Full HD TV SRO422016",
+        "productPrice" : "$ 379.00",
         "subTitle" : "Empfang",
         "person_image": 'https://randomuser.me/api/portraits/men/2.jpg',
         "location": {
@@ -90,6 +98,8 @@ export const users = [
             "first": "Manual",
             "last": "Glos"
         },
+        "productName" : "Veon 42 inch LED-LCD Full HD TV SRO422016",
+        "productPrice" : "$ 379.00",
         "subTitle" : "Zahntechnikmeister (ZTM) · Labor Geretsried",
         "person_image": 'https://randomuser.me/api/portraits/men/2.jpg',
         "location": {
@@ -111,6 +121,8 @@ export const users = [
             "first": "Oliver",
             "last": "Hüsken"
         },
+        "productName" : "Veon 42 inch LED-LCD Full HD TV SRO422016",
+        "productPrice" : "$ 379.00",
         "subTitle" : "Geschäftsführer",
         "person_image": 'https://randomuser.me/api/portraits/men/2.jpg',
         "location": {

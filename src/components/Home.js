@@ -7,6 +7,8 @@ import {
     Text,
     Image,
     Dimensions,
+    FlatList,
+    ListView
 } from 'react-native';
 import {
     Button,
@@ -22,22 +24,23 @@ import I18n from '../i18n/index'
 const { width, height } = Dimensions.get('window');
 const scale = width > height ? height / 2 : width / 2 ;
 
+import { users } from '../config/users';
+
 class Home extends Component {
   constructor(props, context) {
     super(props, context);
-
+    const ds = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2});
     this.state = {
         selectedTab: 'home',
+        dataSource: ds.cloneWithRows(users),
     };
-
-    this.onButtonPress = this.onButtonPress.bind(this);
-    this.changeTab = this.changeTab.bind(this);
   }
-  changeTab (selectedTab) {
+  changeTab = (selectedTab) => {
     this.setState({selectedTab})
-  }
-  onButtonPress () {
-  }
+  };
+  onLearnMore = (user) => {
+    this.props.navigation.navigate('Details', { ...user });
+  };
   render() {
 
     const { navigation } = this.props;
@@ -62,13 +65,25 @@ class Home extends Component {
                         <Text h3 style={{ marginLeft: 10, marginTop: 10,marginBottom: 10 }}>Featured Products</Text>
                         <Divider style={{ backgroundColor: 'grey' }} />
 
-                        <Card
-                        >
-                        <Text style={{marginBottom: 10}}>
-                        The idea with React Native Elements is more about component structure than actual design.
-                        </Text>
-
-                        </Card>
+                        <ListView contentContainerStyle={styles.grid}
+                                  dataSource={this.state.dataSource}
+                                  renderRow={(item) => (
+                                      <TouchableOpacity
+                                          onPress={() => this.onLearnMore(item)}
+                                          style={styles.gridItem}>
+                                          <Image
+                                              resizeMode={'cover'}
+                                              style={styles.panelTop_innerUserImage}
+                                              source={{uri: item.person_image ? item.person_image : null }}/>
+                                          <Text
+                                              numberOfLines={2}
+                                              style={styles.panelTop_LabelTitle}>{`${item.productName}`}</Text>
+                                          <Text
+                                              numberOfLines={1}
+                                              style={styles.panelTop_LabelSubTitle}>{item.productPrice}</Text>
+                                      </TouchableOpacity>
+                                  )}
+                        />
 
                         <View style={styles.viewBotton}>
                         <Button
@@ -125,6 +140,28 @@ class Home extends Component {
 }
 
 const styles = StyleSheet.create({
+    panelTop_innerUserImage: {
+        width: scale - 10,
+        height: scale - 10,
+        borderRadius: 10
+    },
+    grid: {
+       justifyContent: 'center',
+       flexDirection: 'row',
+       flexWrap: 'wrap',
+       flex: 1,
+       alignItems: 'center'
+    },
+    gridItem: {
+        margin:5,
+        width: scale - 10,
+        justifyContent: 'center',
+        alignItems: 'center',
+    },
+    gridItemText: {
+        marginTop: 5,
+        textAlign:'center',
+    },
     iconView: {
         width: scale/3,
         height: scale/3,
@@ -163,12 +200,6 @@ const styles = StyleSheet.create({
         justifyContent:'space-between',
         alignItems: 'center'
     },
-    panelTop_innerUserImage: {
-        height:70,
-        width:70,
-        borderRadius: 35,
-        marginRight: 10,
-    },
     containerPanelTop_innerDetail: {
         flex: 1,
         marginLeft: 10,
@@ -176,13 +207,16 @@ const styles = StyleSheet.create({
         justifyContent:'center',
     },
     panelTop_LabelTitle:{
+        margin: 5,
         color: '#000000',
-        fontSize: 18,
+        fontSize: 16,
     },
     panelTop_LabelSubTitle:{
+        margin: 5,
         color: '#000000',
-        fontSize: 14,
-        opacity: 0.8,
+        fontSize: 16,
+        fontWeight: '700',
+        opacity: 1,
     },
 });
 
