@@ -1,10 +1,13 @@
 import React from 'react';
-import { TabNavigator, StackNavigator, DrawerNavigator } from 'react-navigation';
+import {
+    TabNavigator,
+    StackNavigator,
+    DrawerNavigator
+} from 'react-navigation';
 
 import UserDetail from '../containers/UserDetailContainer';
 import Home from '../containers/HomeContainer';
-
-import I18n from '../i18n/index'
+import I18n from '../i18n'
 
 export const Root = StackNavigator({
     Home: {
@@ -24,6 +27,6 @@ export const Root = StackNavigator({
         }),
     }
 }, {
-  //mode: 'card',
-  //headerMode: 'none',
+  // mode: 'card',
+  // headerMode: 'none',
 });
