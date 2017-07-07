@@ -30,8 +30,14 @@ class AppTabs extends Component {
                     selectedTitleStyle={styles.tabSelectedTitle}
                     selected={selectedTab === 'home'}
                     title={selectedTab === 'home' ? 'Store Home' : null}
-                    renderIcon={() => <Icon containerStyle={styles.tabIcon} color={'#5e6977'} name='home' size={33} />}
-                    renderSelectedIcon={() => <Icon color={'#6296f9'} name='home' size={30} />}
+                    renderIcon={() => <Icon
+                        containerStyle={styles.tabIcon}
+                        color={'#5e6977'}
+                        name='home'
+                        size={33} />}
+                    renderSelectedIcon={() => <Icon
+                        color={'#6296f9'}
+                        name='home' size={30} />}
                     onPress={() => this.changeTab('home')}>
                     <HomeTab {...this.props} />
                 </Tab>
@@ -40,8 +46,15 @@ class AppTabs extends Component {
                     selectedTitleStyle={styles.tabSelectedTitle}
                     selected={selectedTab === 'browse'}
                     title={selectedTab === 'browse' ? 'Browse' : null}
-                    renderIcon={() => <Icon containerStyle={styles.tabIcon} color={'#5e6977'} name='list' size={33} />}
-                    renderSelectedIcon={() => <Icon color={'#6296f9'} name='list' size={30} />}
+                    renderIcon={() => <Icon
+                        containerStyle={styles.tabIcon}
+                        color={'#5e6977'}
+                        name='list'
+                        size={33} />}
+                    renderSelectedIcon={() => <Icon
+                        color={'#6296f9'}
+                        name='list'
+                        size={30} />}
                     onPress={() => this.changeTab('browse')}>
                     <DefaultTab text={'browse'} />
                 </Tab>
@@ -50,8 +63,15 @@ class AppTabs extends Component {
                     selectedTitleStyle={styles.tabSelectedTitle}
                     selected={selectedTab === 'cart'}
                     title={selectedTab === 'cart' ? 'Card' : null}
-                    renderIcon={() => <Icon containerStyle={styles.tabIcon} color={'#5e6977'} name='shopping-cart' size={33} />}
-                    renderSelectedIcon={() => <Icon color={'#6296f9'} name='shopping-cart' size={30} />}
+                    renderIcon={() => <Icon
+                        containerStyle={styles.tabIcon}
+                        color={'#5e6977'}
+                        name='shopping-cart'
+                        size={33} />}
+                    renderSelectedIcon={() => <Icon
+                        color={'#6296f9'}
+                        name='shopping-cart'
+                        size={30} />}
                     onPress={() => this.changeTab('cart')}>
                     <DefaultTab text={'cart'} />
                 </Tab>
@@ -60,8 +80,15 @@ class AppTabs extends Component {
                     selectedTitleStyle={styles.tabSelectedTitle}
                     selected={selectedTab === 'account'}
                     title={selectedTab === 'account' ? 'Account' : null}
-                    renderIcon={() => <Icon containerStyle={styles.tabIcon} color={'#5e6977'} name='person' size={33} />}
-                    renderSelectedIcon={() => <Icon color={'#6296f9'} name='person' size={30} />}
+                    renderIcon={() => <Icon
+                        containerStyle={styles.tabIcon}
+                        color={'#5e6977'}
+                        name='person'
+                        size={33} />}
+                    renderSelectedIcon={() => <Icon
+                        color={'#6296f9'}
+                        name='person'
+                        size={30} />}
                     onPress={() => this.changeTab('account')}>
                     <DefaultTab text={'account'} />
                 </Tab>
