@@ -2,22 +2,29 @@ import React, { Component } from 'react';
 import {
     Text,
     View,
-    ListView,
     ScrollView,
     StyleSheet,
-    Dimensions,
-    Platform,
+    Dimensions
 } from 'react-native';
 import {
     times
 } from 'lodash/fp';
-import { Card, Divider, ListItem } from 'react-native-elements';
-import Communications from 'react-native-communications';
+import {
+    Card,
+    Divider,
+    Button
+} from 'react-native-elements';
+import {
+    CircleSnail
+} from 'react-native-progress';
 import Swiper from 'react-native-swiper';
 import Image from 'react-native-image-progress';
-import { CircleSnail } from 'react-native-progress';
+import I18n from '../../i18n'
 
-const { width, height } = Dimensions.get('window');
+const {
+    width,
+    height
+} = Dimensions.get('window');
 
 class ProductDetail extends Component {
 
@@ -62,6 +69,17 @@ class ProductDetail extends Component {
               </View>
 
               <Divider style={styles.cardDivider} />
+              <View style={styles.cardActionContainer}>
+                  <Text style={styles.cardLabelSubTitle}>
+                      {productPrice}
+                  </Text>
+                  <Button
+                      onPress={() => {}}
+                      backgroundColor={'red'}
+                      iconRight
+                      icon={{name: 'plus', type: 'font-awesome'}}
+                      title={I18n.t('LABOR')} />
+              </View>
           </Card>
       </ScrollView>
     );
@@ -71,6 +89,12 @@ const styles = StyleSheet.create({
     scrollView: {
     },
     wrapper: {
+    },
+    cardActionContainer: {
+        flex: 1,
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+        alignItems: 'center'
     },
     cardCostContainer: {
         flex: 1,
