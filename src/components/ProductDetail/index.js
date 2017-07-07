@@ -34,17 +34,11 @@ class ProductDetail extends Component {
         };
     }
     onChanged = (text) => {
-        let newText = '';
-        const numbers = '0123456789';
-        if(text.length < 1){
-            this.setState({ productCount: 1 });
+        this.setState({ productCount: text });
+        if(text.length < 1 || isNaN(text)){
+          this.setState({ productCount: 0 });
         }
-        for (let i=0; i < text.length; i++) {
-            if(numbers.indexOf(text[i]) > -1 ) {
-                newText = newText + text[i];
-            }
-            this.setState({ productCount: newText });
-        }
+
    };
   render() {
     const { person_image, productName, productPrice} = this.props.navigation.state.params;
@@ -96,7 +90,8 @@ class ProductDetail extends Component {
                           autoCapitalize={'none'}
                           autoCorrect={false}
                           maxLength = {2}
-                          onChangeText={(value) => this.onChanged(value)}
+                          onChangeText={(value) => this.onChanged(parseInt(value))}
+                          onChange={(value) => this.onChanged(parseInt(value))}
                           value={productCount.toString()}
                           defaultValue={productCount.toString()}
                       />
