@@ -8,9 +8,14 @@ import {
     Dimensions,
     Platform,
 } from 'react-native';
-import { Tile, List, ListItem } from 'react-native-elements';
+import {
+    times
+} from 'lodash/fp';
+import { Card, List, ListItem } from 'react-native-elements';
 import Communications from 'react-native-communications';
-import GiftedSpinner from 'react-native-gifted-spinner';
+import Swiper from 'react-native-swiper';
+import Image from 'react-native-image-progress';
+import { CircleSnail } from 'react-native-progress';
 
 const { width, height } = Dimensions.get('window');
 
@@ -21,65 +26,42 @@ class ProductDetail extends Component {
 
     return (
       <ScrollView>
-        <Tile
-            imageSrc={{uri: person_image}}
-            featured
-            title={`${name.first} ${name.last}`}
-            titleStyle={{width, position:'absolute', bottom: (Platform.OS === 'ios') ? 22 : 24, paddingTop: 5, color: '#000', backgroundColor: 'rgba(255,255,255,.5)'}}
-            caption={subTitle}
-            captionStyle={{width, position:'absolute', bottom: 0,paddingBottom: 5, color: '#000', backgroundColor: 'rgba(255,255,255,.5)'}}
-        >
-        </Tile>
-        <List>
-            {
-                phone ?
-                    <ListItem
-                        title="Phone"
-                        leftIcon={{name: 'phone', type: 'font-awesome', color: '#00897b', size: 20}}
-                        rightTitle={phone}
-                        rightTitleStyle={{color: '#000'}}
-                        hideChevron
-                        onPress={() => {
-                            Communications.phonecall(phone, true);
-                        }}
-                    />
-                    : null
-            }
-            {
-                email ?
-                    <ListItem
-                        title="Email"
-                        leftIcon={{name: 'envelope', type: 'font-awesome', color: '#00897b', size: 16}}
-                        rightTitle={email}
-                        rightTitleStyle={{color: '#000'}}
-                        hideChevron
-                        onPress={() => {
-                            Communications.email([email],null,null,'','')
-                        }}
-                    />
-                    : null
-            }
-            {
-                skype ?
-                    <ListItem
-                        title="Skype"
-                        leftIcon={{name: 'skype', type: 'font-awesome', color: '#00897b', size: 18}}
-                        rightTitle={skype}
-                        rightTitleStyle={{color: '#000'}}
-                        hideChevron
-                        onPress={() => {
-                            Communications.phonecall(skype, true);
-                        }}
-                    />
-                    : null
-            }
-        </List>
+          <Swiper
+              style={styles.wrapper}
+              showsButtons={false}
+              width={width}
+              height={width/1.5}
+              showsPagination
+              autoplay
+              loop >
+              {
+                  times(i => (
+                      <Image
+                          style={{flex:1, width, height: width/1.5}}
+                          key={i}
+                          resizeMode={'cover'}
+                          source={{uri: person_image}}
+                          indicator={CircleSnail}
+                      />
+                  ), 5)
+              }
+          </Swiper>
+          <Card containerStyle={{marginLeft: 0 , marginRight: 0}} >
+              <Text style={{marginBottom: 10}}>
+                  {`${phone.toUpperCase()}`}
+              </Text>
+              <Text style={{marginBottom: 10}}>
+                  {`${phone}, ${phone} ${phone}`}
+              </Text>
+          </Card>
       </ScrollView>
     );
   }
 }
 const styles = StyleSheet.create({
     scrollView: {
+    },
+    wrapper: {
     }
 });
 export default ProductDetail;

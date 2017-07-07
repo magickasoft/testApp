@@ -9,7 +9,7 @@ export const users = [
         "productName" : "Veon 42 inch LED-LCD Full HD TV SRO422016",
         "productPrice" : "$ 379.00",
         "subTitle" : "Zahntechnikmeister (ZTM) · Labor Geretsried",
-        "person_image": 'https://randomuser.me/api/portraits/men/2.jpg',
+        "person_image": 'https://randomuser.me/api/portraits/men/1.jpg',
         "location": {
             "street": "3649 dieppe ave",
             "city": "maitland",
@@ -55,7 +55,7 @@ export const users = [
         "productName" : "Veon 42 inch LED-LCD Full HD TV SRO422016",
         "productPrice" : "$ 379.00",
         "subTitle" : "Zahntechniker (ZT) · Labor München",
-        "person_image": 'https://randomuser.me/api/portraits/men/2.jpg',
+        "person_image": 'https://randomuser.me/api/portraits/men/3.jpg',
         "location": {
             "street": "7057 nowlin rd",
             "city": "salem",
@@ -78,7 +78,7 @@ export const users = [
         "productName" : "Veon 42 inch LED-LCD Full HD TV SRO422016",
         "productPrice" : "$ 379.00",
         "subTitle" : "Empfang",
-        "person_image": 'https://randomuser.me/api/portraits/men/2.jpg',
+        "person_image": 'https://randomuser.me/api/portraits/men/4.jpg',
         "location": {
             "street": "3556 toften",
             "city": "aarhus n",
@@ -101,7 +101,7 @@ export const users = [
         "productName" : "Veon 42 inch LED-LCD Full HD TV SRO422016",
         "productPrice" : "$ 379.00",
         "subTitle" : "Zahntechnikmeister (ZTM) · Labor Geretsried",
-        "person_image": 'https://randomuser.me/api/portraits/men/2.jpg',
+        "person_image": 'https://randomuser.me/api/portraits/men/5.jpg',
         "location": {
             "street": "3556 toften",
             "city": "aarhus n",
@@ -124,7 +124,7 @@ export const users = [
         "productName" : "Veon 42 inch LED-LCD Full HD TV SRO422016",
         "productPrice" : "$ 379.00",
         "subTitle" : "Geschäftsführer",
-        "person_image": 'https://randomuser.me/api/portraits/men/2.jpg',
+        "person_image": 'https://randomuser.me/api/portraits/men/6.jpg',
         "location": {
             "street": "3556 toften",
             "city": "aarhus n",
