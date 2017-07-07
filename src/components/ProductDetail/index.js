@@ -80,15 +80,6 @@ class ProductDetail extends Component {
 }
 const styles = StyleSheet.create({
     scrollView: {
-    },
-    container: {
-        flex: 1,
-        marginTop: 20,
-    },
-    separator: {
-        flex: 1,
-        height: 1,
-        backgroundColor: '#8E8E8E',
-    },
+    }
 });
 export default ProductDetail;
