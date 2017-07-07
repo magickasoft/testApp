@@ -24,9 +24,7 @@ class App extends Component {
           netinfo,
         } = this.props;
 
-        if (!autoRehydrated) {
-            return (<View />)
-        }
+        autoRehydrated.getOrElse(<View />);
         return (
             <Root />
         )

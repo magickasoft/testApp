@@ -12,7 +12,7 @@ class HomeContainer extends Component {
     }
 }
 HomeContainer.propTypes = {
-    autoRehydrated: PropTypes.bool.isRequired
+    autoRehydrated: PropTypes.object.isRequired
 
 };
 function select(state) {
