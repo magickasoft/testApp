@@ -2,6 +2,7 @@ import {
     Nothing,
     Just
 } from 'data.maybe';
+
 export function reducer(state = Nothing(), action = {}) {
   const { type } = action;
 
