@@ -10,7 +10,7 @@ import {
 } from 'react-native';
 import {
     Button,
-    Icon,
+    SearchBar,
 } from 'react-native-elements';
 import I18n from '../i18n/index'
 
@@ -30,7 +30,11 @@ class Home extends Component {
     const { navigation } = this.props;
     return (
       <ScrollView>
-
+          <SearchBar
+              round
+              lightTheme
+              onChangeText={() => {}}
+              placeholder='search' />
           <View style={styles.viewBotton}>
               <Button
                   onPress={() => {

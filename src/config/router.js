@@ -24,7 +24,7 @@ export const FeedStack = StackNavigator({
             gesturesEnabled: true,
         },
         // title: `${navigation.state.params.name.first.toUpperCase()} ${navigation.state.params.name.last.toUpperCase()}`,
-        title: '',
+        title: 'splash store',
     }),
   },
 }, {
@@ -36,7 +36,7 @@ export const Root = StackNavigator({
     Home: {
         screen: Home,
         navigationOptions: {
-            title: '',
+            title: 'splash store',
             headerBackTitle: null,
         },
     },
