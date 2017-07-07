@@ -4,7 +4,8 @@ import {
     View,
     ScrollView,
     StyleSheet,
-    Dimensions
+    Dimensions,
+    TextInput
 } from 'react-native';
 import {
     times
@@ -22,14 +23,32 @@ import Image from 'react-native-image-progress';
 import I18n from '../../i18n'
 
 const {
-    width,
-    height
+    width
 } = Dimensions.get('window');
 
 class ProductDetail extends Component {
-
+    constructor(props, context) {
+        super(props, context);
+        this.state = {
+            productCount: 1,
+        };
+    }
+    onChanged = (text) => {
+        let newText = '';
+        const numbers = '0123456789';
+        if(text.length < 1){
+            this.setState({ productCount: 1 });
+        }
+        for (let i=0; i < text.length; i++) {
+            if(numbers.indexOf(text[i]) > -1 ) {
+                newText = newText + text[i];
+            }
+            this.setState({ productCount: newText });
+        }
+   };
   render() {
     const { person_image, productName, productPrice} = this.props.navigation.state.params;
+    const { productCount } = this.state;
 
     return (
       <ScrollView>
@@ -64,21 +83,33 @@ class ProductDetail extends Component {
                       {productPrice}
                   </Text>
                   <Text style={[styles.cardLabelSubTitle, {color: 'red'}]}>
-                      FREE SHIPPING
+                      {'Free shipping'.toUpperCase()}
                   </Text>
               </View>
 
               <Divider style={styles.cardDivider} />
               <View style={styles.cardActionContainer}>
                   <View style={styles.cardRowContainer}>
+                      <TextInput
+                          style={[styles.actionButton,{width: 40, height: 47, textAlign: 'center'}]}
+                          keyboardType={'numeric'}
+                          autoCapitalize={'none'}
+                          autoCorrect={false}
+                          maxLength = {2}
+                          onChangeText={(value) => this.onChanged(value)}
+                          value={productCount.toString()}
+                          defaultValue={productCount.toString()}
+                      />
                       <Button
-                          onPress={() => {}}
+                          onPress={() => {
+                              Math.sign(productCount) ? this.setState({ productCount: Math.abs(productCount) - 1 }) : null
+                              }}
                           title={'-'}
                           buttonStyle={styles.actionButton}
                           textStyle={styles.actionButtonText}
                           backgroundColor={'grey'} />
                       <Button
-                          onPress={() => {}}
+                          onPress={() => {this.setState({ productCount: productCount + 1 });}}
                           title={'+'}
                           buttonStyle={styles.actionButton}
                           textStyle={styles.actionButtonText}
