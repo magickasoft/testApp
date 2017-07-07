@@ -59,7 +59,7 @@ class ProductDetail extends Component {
                   style={styles.cardLabelTitle}>
                   {productName}
               </Text>
-              <View style={styles.cardCostContainer}>
+              <View style={styles.cardRowContainer}>
                   <Text style={styles.cardLabelSubTitle}>
                       {productPrice}
                   </Text>
@@ -70,15 +70,25 @@ class ProductDetail extends Component {
 
               <Divider style={styles.cardDivider} />
               <View style={styles.cardActionContainer}>
-                  <Text style={styles.cardLabelSubTitle}>
-                      {productPrice}
-                  </Text>
+                  <View style={styles.cardRowContainer}>
+                      <Button
+                          onPress={() => {}}
+                          title={'-'}
+                          buttonStyle={styles.actionButton}
+                          textStyle={styles.actionButtonText}
+                          backgroundColor={'grey'} />
+                      <Button
+                          onPress={() => {}}
+                          title={'+'}
+                          buttonStyle={styles.actionButton}
+                          textStyle={styles.actionButtonText}
+                          backgroundColor={'grey'} />
+                  </View>
+
                   <Button
                       onPress={() => {}}
                       backgroundColor={'red'}
-                      iconRight
-                      icon={{name: 'plus', type: 'font-awesome'}}
-                      title={I18n.t('LABOR')} />
+                      title={I18n.t('ADD_TO_CARD').toUpperCase()} />
               </View>
           </Card>
       </ScrollView>
@@ -90,13 +100,25 @@ const styles = StyleSheet.create({
     },
     wrapper: {
     },
+    actionButton: {
+        marginRight: 1,
+        marginLeft: 1,
+        borderWidth: 1,
+
+    },
+    actionButtonText: {
+        margin: 0,
+        fontSize: 18,
+        fontWeight: '600',
+    },
     cardActionContainer: {
+        marginTop: 10,
         flex: 1,
         flexDirection: 'row',
         justifyContent: 'space-between',
         alignItems: 'center'
     },
-    cardCostContainer: {
+    cardRowContainer: {
         flex: 1,
         flexDirection: 'row'
     },
