@@ -1,19 +1,31 @@
-import { bindActionCreators } from 'redux'
-import { connect } from 'react-redux'
+import React, { Component, PropTypes } from 'react';
+import {
+    connect
+} from 'react-redux'
 import CameraRollPicker from '../components/CameraRollPicker'
 
-import * as photoActions from '../actions/photoPicker'
+class CameraRollPickerContainer extends Component {
+    render() {
+        return (
+            <CameraRollPicker {...this.props}/>
+        );
+    }
+}
+CameraRollPickerContainer.propTypes = {
+    autoRehydrated: PropTypes.bool.isRequired
 
-function stateToProps(state) {
+};
+function select(state) {
 
-    const { autoRehydrated, photopiker  } = state;
-    return { autoRehydrated, photopiker };
+    const { autoRehydrated  } = state;
+
+    return {
+        autoRehydrated
+    };
 }
 
-function dispatchToProps(dispatch) {
+const bindActions = {
 
-    const actions = Object.assign({}, photoActions);
-    return bindActionCreators(actions, dispatch)
-}
+};
 
-export default connect(stateToProps, dispatchToProps)(CameraRollPicker)
+export default connect(select, bindActions)(CameraRollPickerContainer)

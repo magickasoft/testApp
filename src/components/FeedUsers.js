@@ -12,7 +12,7 @@ import {
 import { List, ListItem, Icon, } from 'react-native-elements';
 import GiftedSpinner from 'react-native-gifted-spinner';
 
-import { configData } from '../branding/index';
+import { users } from '../config/users';
 
 
 class Feed extends React.Component {
@@ -34,10 +34,10 @@ class Feed extends React.Component {
     return (
       <ScrollView style={styles.scrollView} contentContainerStyle={{paddingBottom: 15}}>
         <List>
-          {configData.users ?
-              configData.users.map((user, id) => (
+          {users ?
+              users.map((user, id) => (
                   <TouchableOpacity key={id} onPress={() => this.onLearnMore(user)} style={styles.containerPanelTop_inner}>
-                      <Image  style={styles.panelTop_innerUserImage}  source={user.person_image ? user.person_image : null }/>
+                      <Image  style={styles.panelTop_innerUserImage}  source={{uri: user.person_image ? user.person_image : null }}/>
                       <View style={styles.containerPanelTop_innerDetail}>
                           <Text
                               numberOfLines={1}

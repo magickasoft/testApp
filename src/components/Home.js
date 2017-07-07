@@ -13,7 +13,6 @@ import {
     Icon,
 } from 'react-native-elements';
 import I18n from '../i18n/index'
-import imagesApp from '../constants/Images';
 
 const { width, height } = Dimensions.get('window');
 const scale = width > height ? height / 2 : width / 2 ;
@@ -31,35 +30,7 @@ class Home extends Component {
     const { navigation } = this.props;
     return (
       <ScrollView>
-          <TouchableOpacity
-              style={styles.viewImage}
-              onPress={() => {
-                  navigation.navigate('TakePhoto', {});
-              }}
-          >
-              <Image
-                  style={{width: scale, height: scale}}
-                  source={imagesApp.profilphoto}
-              />
-              <View style={styles.iconView}>
-                  <Icon
-                      name={'camera'}
-                      type={'font-awesome'}
-                      color={'rgba(255,255,255,1)'}
-                  />
-              </View>
-          </TouchableOpacity>
-          <View style={styles.viewBotton}>
-              <Button
-                  onPress={() => {
-                      navigation.navigate('LaborDetail', {});
-                  }}
-                  backgroundColor={'#397af8'}
-                  raised
-                  iconRight
-                  icon={{name: 'info-circle', type: 'font-awesome'}}
-                  title={I18n.t('LABOR')} />
-          </View>
+
           <View style={styles.viewBotton}>
               <Button
                   onPress={() => {
@@ -70,28 +41,6 @@ class Home extends Component {
                   iconRight
                   icon={{name: 'user', type: 'font-awesome'}}
                   title={I18n.t('CONTACT_PERSON')} />
-          </View>
-          <View style={styles.viewBotton}>
-              <Button
-                  onPress={() => {
-                      navigation.navigate('Settings', {});
-                  }}
-                  backgroundColor={'#397af8'}
-                  raised
-                  iconRight
-                  icon={{name: 'cog', type: 'font-awesome'}}
-                  title={I18n.t('SETTINGS')} />
-          </View>
-          <View style={styles.viewBotton}>
-              <Button
-                  onPress={() => {
-                      navigation.navigate('LaborNews', {});
-                  }}
-                  backgroundColor={'#397af8'}
-                  raised
-                  iconRight
-                  icon={{name: 'facebook', type: 'font-awesome'}}
-                  title='News' />
           </View>
       </ScrollView>
     );

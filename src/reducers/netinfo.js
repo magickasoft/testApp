@@ -4,7 +4,7 @@ import {
 } from 'data.maybe';
 import {
     SET_STATUS
-} from 'actions/netinfo';
+} from '../actions/netinfo';
 
 export const initialState = {
     type: Nothing()

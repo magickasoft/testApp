@@ -1,19 +1,32 @@
-import { bindActionCreators } from 'redux'
-import { connect } from 'react-redux'
-
+import React, { Component, PropTypes } from 'react';
+import {
+    connect
+} from 'react-redux'
 import UserDetail from '../components/UserDetail'
 
-function stateToProps(state) {
+class UserDetailContainer extends Component {
+    render() {
+        return (
+            <UserDetail {...this.props}/>
+        );
+    }
+}
+UserDetailContainer.propTypes = {
+    autoRehydrated: PropTypes.bool.isRequired
 
-    const { autoRehydrated } = state;
-    return { autoRehydrated };
+};
+function select(state) {
+
+    const { autoRehydrated  } = state;
+
+    return {
+        autoRehydrated
+    };
 }
 
-function dispatchToProps(dispatch) {
+const bindActions = {
 
-    const actions = Object.assign({});
-    return bindActionCreators(actions, dispatch)
-}
+};
 
-export default connect(stateToProps, dispatchToProps)(UserDetail)
+export default connect(select, bindActions)(UserDetailContainer)
 

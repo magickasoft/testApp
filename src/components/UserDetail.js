@@ -19,14 +19,13 @@ class UserDetail extends React.Component {
     super(props);
     this.state = {};
   }
-  toCall
   render() {
     const { person_image, name, subTitle, phone, email, skype } = this.props.navigation.state.params;
 
     return (
       <ScrollView>
         <Tile
-            imageSrc={person_image}
+            imageSrc={{uri: person_image}}
             featured
             title={`${name.first} ${name.last}`}
             titleStyle={{width, position:'absolute', bottom: (Platform.OS === 'ios') ? 22 : 24, paddingTop: 5, color: '#000', backgroundColor: 'rgba(255,255,255,.5)'}}
@@ -78,27 +77,6 @@ class UserDetail extends React.Component {
                     : null
             }
         </List>
-
-        {/*<List>*/}
-            {/*<ListItem*/}
-                {/*title="Username"*/}
-                {/*rightTitle={login.username}*/}
-                {/*hideChevron*/}
-            {/*/>*/}
-        {/*</List>*/}
-
-        {/*<List>*/}
-            {/*<ListItem*/}
-                {/*title="Birthday"*/}
-                {/*rightTitle={dob}*/}
-                {/*hideChevron*/}
-            {/*/>*/}
-            {/*<ListItem*/}
-                {/*title="City"*/}
-                {/*rightTitle={location.city}*/}
-                {/*hideChevron*/}
-            {/*/>*/}
-        {/*</List>*/}
       </ScrollView>
     );
   }
