@@ -11,7 +11,7 @@ import {
 import {
     times
 } from 'lodash/fp';
-import { Card, List, ListItem } from 'react-native-elements';
+import { Card, Divider, ListItem } from 'react-native-elements';
 import Communications from 'react-native-communications';
 import Swiper from 'react-native-swiper';
 import Image from 'react-native-image-progress';
@@ -22,7 +22,7 @@ const { width, height } = Dimensions.get('window');
 class ProductDetail extends Component {
 
   render() {
-    const { person_image, name, subTitle, phone, email, skype } = this.props.navigation.state.params;
+    const { person_image, productName, productPrice} = this.props.navigation.state.params;
 
     return (
       <ScrollView>
@@ -46,13 +46,22 @@ class ProductDetail extends Component {
                   ), 5)
               }
           </Swiper>
-          <Card containerStyle={{marginLeft: 0 , marginRight: 0}} >
-              <Text style={{marginBottom: 10}}>
-                  {`${phone.toUpperCase()}`}
+          <Card containerStyle={styles.cardDescription} >
+              <Text
+                  numberOfLines={1}
+                  style={styles.cardLabelTitle}>
+                  {productName}
               </Text>
-              <Text style={{marginBottom: 10}}>
-                  {`${phone}, ${phone} ${phone}`}
-              </Text>
+              <View style={styles.cardCostContainer}>
+                  <Text style={styles.cardLabelSubTitle}>
+                      {productPrice}
+                  </Text>
+                  <Text style={[styles.cardLabelSubTitle, {color: 'red'}]}>
+                      FREE SHIPPING
+                  </Text>
+              </View>
+
+              <Divider style={styles.cardDivider} />
           </Card>
       </ScrollView>
     );
@@ -62,6 +71,30 @@ const styles = StyleSheet.create({
     scrollView: {
     },
     wrapper: {
+    },
+    cardCostContainer: {
+        flex: 1,
+        flexDirection: 'row'
+    },
+    cardDescription: {
+        marginLeft: 0,
+        marginRight: 0
+    },
+    cardLabelTitle:{
+        margin: 5,
+        marginBottom: 10,
+        color: '#000000',
+        fontSize: 16,
+    },
+    cardLabelSubTitle:{
+        margin: 5,
+        marginBottom: 10,
+        color: '#000000',
+        fontSize: 16,
+        fontWeight: '700'
+    },
+    cardDivider: {
+        backgroundColor: 'grey'
     }
 });
 export default ProductDetail;
