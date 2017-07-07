@@ -2,16 +2,16 @@ import React, { Component, PropTypes } from 'react';
 import {
     connect
 } from 'react-redux'
-import UserDetail from '../components/UserDetail'
+import ProductDetail from '../components/ProductDetail'
 
-class UserDetailContainer extends Component {
+class ProductDetailContainer extends Component {
     render() {
         return (
-            <UserDetail {...this.props}/>
+            <ProductDetail {...this.props}/>
         );
     }
 }
-UserDetailContainer.propTypes = {
+ProductDetailContainer.propTypes = {
     autoRehydrated: PropTypes.bool.isRequired
 
 };
@@ -28,5 +28,5 @@ const bindActions = {
 
 };
 
-export default connect(select, bindActions)(UserDetailContainer)
+export default connect(select, bindActions)(ProductDetailContainer)
 

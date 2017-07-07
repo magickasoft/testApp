@@ -39,7 +39,7 @@ class Home extends Component {
     this.setState({selectedTab})
   };
   onLearnMore = (user) => {
-    this.props.navigation.navigate('Details', { ...user });
+    this.props.navigation.navigate('ProductDetails', { ...user });
   };
   render() {
 
@@ -84,18 +84,6 @@ class Home extends Component {
                                       </TouchableOpacity>
                                   )}
                         />
-
-                        <View style={styles.viewBotton}>
-                        <Button
-                        onPress={() => {
-                        navigation.navigate('Feed', {});
-                        }}
-                        backgroundColor={'#397af8'}
-                        raised
-                        iconRight
-                        icon={{name: 'user', type: 'font-awesome'}}
-                        title={I18n.t('CONTACT_PERSON')} />
-                        </View>
                     </ScrollView>
                 </Tab>
                 <Tab

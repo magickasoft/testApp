@@ -5,7 +5,7 @@ import {
     DrawerNavigator
 } from 'react-navigation';
 
-import UserDetail from '../containers/UserDetailContainer';
+import ProductDetail from '../containers/ProductDetailContainer';
 import Home from '../containers/HomeContainer';
 import I18n from '../i18n'
 
@@ -17,8 +17,8 @@ export const Root = StackNavigator({
             headerBackTitle: null,
         },
     },
-    Details: {
-        screen: UserDetail,
+    ProductDetails: {
+        screen: ProductDetail,
         navigationOptions: ({navigation, screenProps}) => ({
             cardStack: {
                 gesturesEnabled: true,
