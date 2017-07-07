@@ -12,7 +12,7 @@ class ProductDetailContainer extends Component {
     }
 }
 ProductDetailContainer.propTypes = {
-    autoRehydrated: PropTypes.bool.isRequired
+    autoRehydrated: PropTypes.object.isRequired
 
 };
 function select(state) {

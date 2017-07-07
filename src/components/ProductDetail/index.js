@@ -14,11 +14,8 @@ import GiftedSpinner from 'react-native-gifted-spinner';
 
 const { width, height } = Dimensions.get('window');
 
-class UserDetail extends React.Component {
-  constructor(props){
-    super(props);
-    this.state = {};
-  }
+class ProductDetail extends Component {
+
   render() {
     const { person_image, name, subTitle, phone, email, skype } = this.props.navigation.state.params;
 
@@ -94,4 +91,4 @@ const styles = StyleSheet.create({
         backgroundColor: '#8E8E8E',
     },
 });
-export default UserDetail;
+export default ProductDetail;

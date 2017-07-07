@@ -7,11 +7,9 @@ import {
     Text,
     Image,
     Dimensions,
-    FlatList,
     ListView
 } from 'react-native';
 import {
-    Button,
     SearchBar,
     Card,
     Divider,
@@ -19,14 +17,13 @@ import {
     Tab,
     Icon
 } from 'react-native-elements';
-import I18n from '../i18n/index'
 
 const { width, height } = Dimensions.get('window');
 const scale = width > height ? height / 2 : width / 2 ;
 
-import { users } from '../config/users';
+import { users } from '../../config/users';
 
-class Home extends Component {
+class Tabs extends Component {
   constructor(props, context) {
     super(props, context);
     const ds = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2});
@@ -73,14 +70,14 @@ class Home extends Component {
                                           style={styles.gridItem}>
                                           <Image
                                               resizeMode={'cover'}
-                                              style={styles.panelTop_innerUserImage}
+                                              style={styles.coverImage}
                                               source={{uri: item.person_image ? item.person_image : null }}/>
                                           <Text
                                               numberOfLines={2}
-                                              style={styles.panelTop_LabelTitle}>{`${item.productName}`}</Text>
+                                              style={styles.coverLabelTitle}>{`${item.productName}`}</Text>
                                           <Text
                                               numberOfLines={1}
-                                              style={styles.panelTop_LabelSubTitle}>{item.productPrice}</Text>
+                                              style={styles.coverLabelSubTitle}>{item.productPrice}</Text>
                                       </TouchableOpacity>
                                   )}
                         />
@@ -128,7 +125,7 @@ class Home extends Component {
 }
 
 const styles = StyleSheet.create({
-    panelTop_innerUserImage: {
+    coverImage: {
         width: scale - 10,
         height: scale - 10,
         borderRadius: 10
@@ -146,60 +143,15 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         alignItems: 'center',
     },
-    gridItemText: {
-        marginTop: 5,
-        textAlign:'center',
-    },
-    iconView: {
-        width: scale/3,
-        height: scale/3,
-        position: 'absolute',
-        bottom: -(scale/3/3)+(scale/3/3),
-        backgroundColor:'blue',
-        borderRadius:scale/6,
-        borderWidth: 6,
-        borderColor: 'white',
-        flexDirection: 'row',
-        justifyContent:'center',
-        alignItems: 'center'
-    },
-    viewImage: {
-      marginTop: 15,
-      paddingBottom: (scale/3/3),
-      flex: 1,
-      flexDirection: 'row',
-      justifyContent:'center',
-      alignItems: 'center'
-    },
-    viewBotton:{
-      marginTop: 15,
-    },
-    switch: {
-        marginLeft: 10,
-        marginRight: 5,
-    },
     scrollView: {
         margin: 0
     },
-    containerPanelTop_inner: {
-        flex: 1,
-        margin: 10,
-        flexDirection: 'row',
-        justifyContent:'space-between',
-        alignItems: 'center'
-    },
-    containerPanelTop_innerDetail: {
-        flex: 1,
-        marginLeft: 10,
-        flexDirection: 'column',
-        justifyContent:'center',
-    },
-    panelTop_LabelTitle:{
+    coverLabelTitle:{
         margin: 5,
         color: '#000000',
         fontSize: 16,
     },
-    panelTop_LabelSubTitle:{
+    coverLabelSubTitle:{
         margin: 5,
         color: '#000000',
         fontSize: 16,
@@ -208,4 +160,4 @@ const styles = StyleSheet.create({
     },
 });
 
-export default Home;
+export default Tabs;

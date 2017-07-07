@@ -6,7 +6,7 @@ import {
 } from 'react-navigation';
 
 import ProductDetail from '../containers/ProductDetailContainer';
-import Home from '../containers/HomeContainer';
+import Home from '../containers/TabsContainer';
 import I18n from '../i18n'
 
 export const Root = StackNavigator({

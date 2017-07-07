@@ -2,16 +2,16 @@ import React, { Component, PropTypes } from 'react';
 import {
     connect
 } from 'react-redux'
-import Home from '../components/Home'
+import Tabs from '../components/Tabs'
 
-class HomeContainer extends Component {
+class TabsContainer extends Component {
     render() {
         return (
-            <Home {...this.props}/>
+            <Tabs {...this.props}/>
         );
     }
 }
-HomeContainer.propTypes = {
+TabsContainer.propTypes = {
     autoRehydrated: PropTypes.object.isRequired
 
 };
@@ -28,4 +28,4 @@ const bindActions = {
 
 };
 
-export default connect(select, bindActions)(HomeContainer)
+export default connect(select, bindActions)(TabsContainer)
