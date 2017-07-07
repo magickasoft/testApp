@@ -101,7 +101,7 @@ class ProductDetail extends Component {
                           textStyle={styles.actionButtonText}
                           backgroundColor={'grey'} />
                       <Button
-                          onPress={() => {this.setState({ productCount: productCount + 1 });}}
+                          onPress={() => { productCount < 99 ? this.setState({ productCount: productCount + 1 }) : null}}
                           title={'+'}
                           buttonStyle={styles.actionButton}
                           textStyle={styles.actionButtonText}
