@@ -23,7 +23,6 @@ export const FeedStack = StackNavigator({
         cardStack: {
             gesturesEnabled: true,
         },
-        // title: `${navigation.state.params.name.first.toUpperCase()} ${navigation.state.params.name.last.toUpperCase()}`,
         title: 'splash store',
     }),
   },
