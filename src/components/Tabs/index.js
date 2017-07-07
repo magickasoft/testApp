@@ -9,7 +9,7 @@ import {
     Icon
 } from 'react-native-elements';
 import HomeTab from './HomeTab';
-
+import DefaultTab from './DefaultTab';
 
 class AppTabs extends Component {
   constructor(props, context) {
@@ -44,9 +44,7 @@ class AppTabs extends Component {
                     renderIcon={() => <Icon containerStyle={{justifyContent: 'center', alignItems: 'center', marginTop: 12}} color={'#5e6977'} name='list' size={33} />}
                     renderSelectedIcon={() => <Icon color={'#6296f9'} name='list' size={30} />}
                     onPress={() => this.changeTab('browse')}>
-                    <View>
-                        <Text>browse</Text>
-                    </View>
+                    <DefaultTab text={'browse'} />
                 </Tab>
                 <Tab
                     titleStyle={{fontWeight: 'bold', fontSize: 10}}
@@ -56,9 +54,7 @@ class AppTabs extends Component {
                     renderIcon={() => <Icon containerStyle={{justifyContent: 'center', alignItems: 'center', marginTop: 12}} color={'#5e6977'} name='shopping-cart' size={33} />}
                     renderSelectedIcon={() => <Icon color={'#6296f9'} name='shopping-cart' size={30} />}
                     onPress={() => this.changeTab('cart')}>
-                    <View>
-                        <Text>cart</Text>
-                    </View>
+                    <DefaultTab text={'cart'} />
                 </Tab>
                 <Tab
                     titleStyle={{fontWeight: 'bold', fontSize: 10}}
@@ -68,9 +64,7 @@ class AppTabs extends Component {
                     renderIcon={() => <Icon containerStyle={{justifyContent: 'center', alignItems: 'center', marginTop: 12}} color={'#5e6977'} name='person' size={33} />}
                     renderSelectedIcon={() => <Icon color={'#6296f9'} name='person' size={30} />}
                     onPress={() => this.changeTab('account')}>
-                    <View>
-                        <Text>account</Text>
-                    </View>
+                    <DefaultTab text={'account'} />
                 </Tab>
             </Tabs>
     );
