@@ -10,7 +10,7 @@ export const Root = StackNavigator({
     Home: {
         screen: Home,
         navigationOptions: {
-            title: 'splash store',
+            title: I18n.t('NAV_TITLE'),
             headerBackTitle: null,
         },
     },
@@ -20,7 +20,7 @@ export const Root = StackNavigator({
             cardStack: {
                 gesturesEnabled: true,
             },
-            title: 'splash store',
+            title: I18n.t('NAV_TITLE'),
         }),
     }
 }, {
