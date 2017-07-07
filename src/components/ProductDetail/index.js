@@ -35,10 +35,7 @@ class ProductDetail extends Component {
     }
     onChanged = (text) => {
         this.setState({ productCount: text });
-        if(text.length < 1 || isNaN(text)){
-          this.setState({ productCount: 0 });
-        }
-
+        text.length < 1 || isNaN(text) && this.setState({ productCount: 0 })
    };
   render() {
     const { person_image, productName, productPrice} = this.props.navigation.state.params;
